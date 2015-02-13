@@ -55,5 +55,12 @@ class WelcomeController extends Controller {
 		return view('madrid.infoEvento', ['infoEvento'=>$infoEvento, 'listaRelacionados'=>$listaRelacionados]);
 	}
 
+	public function showDistritos(){
+		//$listaDistritos = \DB::collection('centros')->select('tipo')->distinct()->get();
+		$listaDistritos = \DB::collection('centros')->select('localizacion.distrito')->distinct()->get();
+		dd($listaDistritos);
+
+	}
+
 }
 

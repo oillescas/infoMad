@@ -14,6 +14,7 @@
 Route::get('/', 'WelcomeController@index');
 Route::get('centro/{id}', 'WelcomeController@showProfile');
 Route::get('evento/{id}', 'WelcomeController@showEvent');
+Route::get('distritos', 'WelcomeController@showDistritos');
 
 Route::get('home', 'HomeController@index');
 
