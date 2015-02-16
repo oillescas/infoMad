@@ -30,11 +30,12 @@
              function displayInfobox(e)
              {
                 pinInfobox.setOptions({ visible:true });
+                map.setView({center: loc, zoom: 15});
              }
 
              function hideInfobox(e)
              {
-                pinInfobox.setOptions({ visible: false });
+                //pinInfobox.setOptions({ visible: false });
              }
 
             map.entities.push(pin);

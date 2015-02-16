@@ -151,6 +151,7 @@ return [
 		 */
 		'Jenssegers\Mongodb\MongodbServiceProvider',
 
+
 	],
 
 	/*
@@ -198,6 +199,7 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+		'Carbon'	=> 'Carbon\Carbon',
 
 	],
 

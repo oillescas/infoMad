@@ -45,12 +45,19 @@ class CargaEventosCulturalesMadrid extends Command {
 		$u=0;
 		foreach ($eventos as $evento) {
 			$eventoDto = Evento::firstOrNew(array('id-evento' => $evento['id-evento']));
-			if($eventoDto->id) $u++;
-			else $n++;
+			if($eventoDto->id) {
+				$u++;
+				$this->comment("Actualizando ".$eventoDto->titulo." -> ". $eventoDto['id-evento']);
+			}
+			else{
+				$n++;
+				$this->comment("Creando ".$evento['titulo']." -> ". $evento['id-evento']);
+			}
 			foreach ($evento as $key => $value) {
 				$eventoDto[$key] = $value;
 			}
 			$eventoDto->save();
+			/* buscar y avisar si la instalacion no existe localizacion.id-instalacion */
 		}
 		$this->comment($n+$u." Eventos recuperados $n nuevos, $u actualizados");
 	}

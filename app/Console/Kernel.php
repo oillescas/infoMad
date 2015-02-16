@@ -29,8 +29,23 @@ class Kernel extends ConsoleKernel {
 		$schedule->command('inspire')
 				 ->hourly();
 
+		$schedule->command('carga:centros')
+				 ->daily()
+				 ->sendOutputTo(storage_path().'/logs/inport.log')
+				 ->emailOutputTo('oscar.illescas@gmail.com');
+
+		$schedule->command('carga:bibliotecas')
+				 ->daily()
+				 ->sendOutputTo(storage_path().'/logs/inport.log')
+				 ->emailOutputTo('oscar.illescas@gmail.com');
+
 		$schedule->command('carga:eventos')
-				 ->everyFiveMinutes()
+				 ->daily()
+				 ->sendOutputTo(storage_path().'/logs/inport.log')
+				 ->emailOutputTo('oscar.illescas@gmail.com');
+
+		$schedule->command('carga:eventosb')
+				 ->daily()
 				 ->sendOutputTo(storage_path().'/logs/inport.log')
 				 ->emailOutputTo('oscar.illescas@gmail.com');
 	}

@@ -57,7 +57,10 @@ class WelcomeController extends Controller {
 
 	public function showDistritos(){
 		//$listaDistritos = \DB::collection('centros')->select('tipo')->distinct()->get();
-		$listaDistritos = \DB::collection('centros')->select('localizacion.distrito')->distinct()->get();
+		//$listaDistritos = \DB::collection('centros')->select('localizacion.distrito')->distinct()->get();
+
+
+		$listaDistritos = \DB::collection('eventos')->select('tipo')->distinct()->get();
 		dd($listaDistritos);
 
 	}
