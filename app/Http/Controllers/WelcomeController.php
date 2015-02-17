@@ -1,8 +1,7 @@
 <?php namespace App\Http\Controllers;
-use Httpful\Request;
-use Response;
 use App\Centro;
 use App\Evento;
+use Carbon;
 
 class WelcomeController extends Controller {
 
@@ -43,17 +42,13 @@ class WelcomeController extends Controller {
 
 	public function showProfile($id){
 		$infocentro = $this->centro->find($id);
-		$listaEventos = $this->evento->where('localizacion.id-instalacion',$id)->get();
+		$listaEventos = $this->evento->where('localizacion.id_instalacion',$id)->get();
 		//print_r($centro);
 		return view('madrid.infocentro', ['listaEventos'=>$listaEventos, 'infoCentro'=>$infocentro]);
 	}
 
-	public function showEvent($id){
-		$infoEvento = $this->evento->find($id);
-		$listaRelacionados = $this->evento->where('tipo',$infoEvento['tipo'])->get();
-		//print_r($centro);
-		return view('madrid.infoEvento', ['infoEvento'=>$infoEvento, 'listaRelacionados'=>$listaRelacionados]);
-	}
+
+
 
 	public function showDistritos(){
 		//$listaDistritos = \DB::collection('centros')->select('tipo')->distinct()->get();

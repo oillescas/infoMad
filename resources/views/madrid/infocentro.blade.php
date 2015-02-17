@@ -33,16 +33,15 @@
 
                     <div class="panel-body">
                         <div id="centro" class="centro" data-lat="{{$infoCentro['localizacion']['latitud'] or ''}}" data-lon="{{$infoCentro['localizacion']['longitud'] or ''}}">
-                            <h2><a href="/centro/{{$infoCentro['id-entidad']}}">{{$infoCentro['nombre']}}</a></h2>
+                            <h2><a href="/centro/{{$infoCentro['id_entidad']}}">{{$infoCentro['nombre']}}</a></h2>
                             <div>
-                                {{$infoCentro['localizacion']['clase-vial'] or ''}}/
-                                {{$infoCentro['localizacion']['nombre-via'] or ''}},
+                                {{$infoCentro['localizacion']['clase_vial'] or ''}}
+                                {{$infoCentro['localizacion']['nombre_via'] or ''}},
                                 {{$infoCentro['localizacion']['num'] or ''}}
                             </div>
                             <div>{{$infoCentro['localizacion']['distrito'] or ''}}</div>
                             <div>{{$infoCentro['transporte']}}</div>
                             <div>{{$infoCentro['equipamiento']}}</div>
-                            <!-- {{print_r($infoCentro)}}-->
                          </div>
                     </div>
                 </div>

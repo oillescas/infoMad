@@ -13,7 +13,13 @@
 
 Route::get('/', 'WelcomeController@index');
 Route::get('centro/{id}', 'WelcomeController@showProfile');
-Route::get('evento/{id}', 'WelcomeController@showEvent');
+
+
+Route::get('evento/', 'EventController@index');
+Route::get('evento/{id}', 'EventController@showEvent');
+Route::get('evento/tipo/{id}', 'EventController@showEventTipo');
+
+
 Route::get('distritos', 'WelcomeController@showDistritos');
 
 Route::get('home', 'HomeController@index');

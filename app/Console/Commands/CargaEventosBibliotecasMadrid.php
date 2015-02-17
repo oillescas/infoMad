@@ -44,14 +44,14 @@ class CargaEventosBibliotecasMadrid extends Command {
 		$n = 0;
 		$u=0;
 		foreach ($eventos as $evento) {
-			$eventoDto = Evento::firstOrNew(array('id-evento' => $evento['id-evento']));
+			$eventoDto = Evento::firstOrNew(array('id_evento' => $evento['id_evento']));
 			if($eventoDto->id) {
 				$u++;
-				$this->comment("Actualizando ".$eventoDto->titulo." -> ". $eventoDto['id-evento']);
+				$this->comment("Actualizando ".$eventoDto->titulo." -> ". $eventoDto['id_evento']);
 			}
 			else{
 				$n++;
-				$this->comment("Creando ".$evento['titulo']." -> ". $evento['id-evento']);
+				$this->comment("Creando ".$evento['titulo']." -> ". $evento['id_evento']);
 			}
 			foreach ($evento as $key => $value) {
 				$eventoDto[$key] = $value;

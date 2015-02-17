@@ -80,17 +80,18 @@ class ApiMadrid{
                         if((string)$dato['nombre'] == 'LOCALIZACION' || (string)$dato['nombre'] == 'DATOSCONTACTOS'){
                             $objLocalizacion = array();
                             foreach ($dato as $objLocal) {
-                                    $objLocalizacion[strtolower($objLocal['nombre'])] = (string)$objLocal;
+                                    $objLocalizacion[str_replace('-', '_', strtolower($objLocal['nombre']))] = (string)$objLocal;
                             }
-                            $objContenido[strtolower($dato['nombre'])] = $objLocalizacion;
+                            $objContenido[str_replace('-', '_', strtolower($dato['nombre']))] = $objLocalizacion;
                         }else{
-                            $objContenido[strtolower($dato['nombre'])] = (string)$dato;
+                            $objContenido[str_replace('-', '_', strtolower($dato['nombre']))] = (string)$dato;
                         }
                     }
                 }
                 $objSalida[] = $objContenido;
             }
         }
+
         return $objSalida;
     }
 }

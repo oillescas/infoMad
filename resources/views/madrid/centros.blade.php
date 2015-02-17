@@ -18,17 +18,16 @@
                         <ul id="listaCentros">
                             @foreach ($listaContenidos as $contenido)
                              <li class="centro" data-lat="{{$contenido['localizacion']['latitud'] or 0}}" data-lon="{{$contenido['localizacion']['longitud'] or 0}}">
-                                <h2><a href="/centro/{{$contenido['id-entidad']}}">{{$contenido['nombre']}}</a></h2>
+                                <h2><a href="/centro/{{$contenido->id_entidad}}">{{$contenido->nombre}}</a></h2>
                                 <div class="contenidoExtendido">
                                   <div>
-                                    {{$contenido['localizacion']['clase-vial']}}/
-                                    {{$contenido['localizacion']['nombre-via'] or ''}},
+                                    {{$contenido->localizacion->clase_vial or ''}}
+                                    {{$contenido['localizacion']['nombre_via'] or ''}},
                                     {{$contenido['localizacion']['num'] or ''}}
                                   </div>
                                   <div>{{$contenido['localizacion']['distrito'] or ''}}</div>
                                   <div>{{$contenido['transporte']}}</div>
                                 </div>
-                                <!-- {{print_r($contenido)}}-->
                              </li>
                             @endforeach
                         </ul>

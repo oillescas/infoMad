@@ -44,7 +44,7 @@ class CargaCentrosCulturalesMadrid extends Command {
 		$n = 0;
 		$u=0;
 		foreach ($centros as $centro) {
-			$centroDto = Centro::firstOrNew(array('id-entidad' => $centro['id-entidad']));
+			$centroDto = Centro::firstOrNew(array('id_entidad' => $centro['id_entidad']));
 			if($centroDto->id) $u++;
 			else $n++;
 			foreach ($centro as $key => $value) {
