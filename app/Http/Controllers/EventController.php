@@ -29,7 +29,7 @@ class EventController extends Controller {
 	{
 		$today = Carbon::today();
 		$listaRelacionados = $this->evento->where('fecha_evento', $today)->get();
-		return view('madrid.listaTipo', ['listaRelacionados'=>$listaRelacionados]);
+		return view('madrid.listaDia', ['listaRelacionados'=>$listaRelacionados]);
 	}
 
 	public function showEvent($id){

@@ -1,9 +1,9 @@
-<div class="evento" itemscope  itemtype="http://schema.org/Event">
+<div id="{{$evento->id_evento}}" class="evento" itemscope  itemtype="http://schema.org/Event">
     <h2><a itemprop="url"  href="/evento/{{$evento['id_evento']}}"><span itemprop="name">{{$evento['titulo']}}</span></a></h2>
     <div itemprop="description">
         {{$evento['descripcion']}}
     </div>
-    <meta  itemprop="startDate" content="{{$evento['fecha_evento']->toDateString()}}"/>
+    <meta  itemprop="startDate" content="{{$evento['fecha_evento']->toDateString()}}T{{$evento['hora_evento']}}"/>
     <div>
      @if($evento['evento_larga_duracion'])
         Del
