@@ -4,8 +4,15 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <div id="calendar"></div>
+            <div class="col-md-6">
+                <div id="idMap"> </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div id="calendar"></div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row">

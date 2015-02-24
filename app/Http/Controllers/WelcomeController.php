@@ -47,18 +47,5 @@ class WelcomeController extends Controller {
 		return view('madrid.infocentro', ['listaEventos'=>$listaEventos, 'infoCentro'=>$infocentro]);
 	}
 
-
-
-
-	public function showDistritos(){
-		//$listaDistritos = \DB::collection('centros')->select('tipo')->distinct()->get();
-		//$listaDistritos = \DB::collection('centros')->select('localizacion.distrito')->distinct()->get();
-
-
-		$listaDistritos = \DB::collection('eventos')->select('tipo')->distinct()->get();
-		dd($listaDistritos);
-
-	}
-
 }
 

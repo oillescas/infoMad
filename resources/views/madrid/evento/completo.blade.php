@@ -1,5 +1,5 @@
 <div id="{{$evento->id_evento}}" class="evento" itemscope  itemtype="http://schema.org/Event">
-    <h2><a itemprop="url"  href="/evento/{{$evento['id_evento']}}"><span itemprop="name">{{$evento['titulo']}}</span></a></h2>
+    <h2><a itemprop="url"  href="{{route('evento.show', $evento->id_evento)}}"><span itemprop="name">{{$evento['titulo']}}</span></a></h2>
     <div itemprop="description">
         {{$evento['descripcion']}}
     </div>
@@ -20,7 +20,12 @@
       @else
         {{$evento['precio']}}
       @endif</div>
-     <div><a href="/centro/{{$evento['localizacion']['id_instalacion']}}">{{$evento['localizacion']['nombre_instalacion']}}</a></div>
-    <div><a href="/evento/tipo/{{$evento->tipo}}">{{$evento->tipo}}</a></div>
+
+    <div itemprop="location" itemscope itemtype="http://schema.org/EventVenue">
+        <meta itemprop="latitude" content="{{$evento['localizacion']['latitud']}}" />
+        <meta itemprop="longitude" content="{{$evento['localizacion']['longitud']}}" />
+        <a href="/centro/{{$evento['localizacion']['id_instalacion']}}">{{$evento['localizacion']['nombre_instalacion']}}</a>
+    </div>
+    <div><a href=" {{route('evento.tipo', $evento->tipo)}}">{{$evento->tipo}}</a></div>
     <div class="verMas"><a href="{{$evento['content_url']}}">Ver info</a></div>
 </div>

@@ -30,23 +30,23 @@ class Kernel extends ConsoleKernel {
 				 ->hourly();
 
 		$schedule->command('carga:centros')
-				 ->daily()
+				 ->dailyAt('11:15')
 				 ->sendOutputTo(storage_path().'/logs/inport.log')
 				 ->emailOutputTo('oscar.illescas@gmail.com');
 
 		$schedule->command('carga:bibliotecas')
-				 ->daily()
-				 ->sendOutputTo(storage_path().'/logs/inport.log')
+				 ->dailyAt('11:16')
+				 ->sendOutputTo(storage_path().'/logs/inport2.log')
 				 ->emailOutputTo('oscar.illescas@gmail.com');
 
 		$schedule->command('carga:eventos')
-				 ->daily()
-				 ->sendOutputTo(storage_path().'/logs/inport.log')
+				 ->dailyAt('11:17')
+				 ->sendOutputTo(storage_path().'/logs/inport3.log')
 				 ->emailOutputTo('oscar.illescas@gmail.com');
 
 		$schedule->command('carga:eventosb')
-				 ->daily()
-				 ->sendOutputTo(storage_path().'/logs/inport.log')
+				 ->dailyAt('11:18')
+				 ->sendOutputTo(storage_path().'/logs/inport4.log')
 				 ->emailOutputTo('oscar.illescas@gmail.com');
 	}
 

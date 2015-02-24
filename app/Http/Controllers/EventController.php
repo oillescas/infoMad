@@ -35,12 +35,12 @@ class EventController extends Controller {
 	public function showEvent($id){
 		$infoEvento = $this->evento->find($id);
 		$listaRelacionados = $this->evento->where('tipo',$infoEvento['tipo'])->get();
-		return view('madrid.infoEvento', ['infoEvento'=>$infoEvento, 'listaRelacionados'=>$listaRelacionados]);
+		return view('madrid.evento.show', ['infoEvento'=>$infoEvento, 'listaRelacionados'=>$listaRelacionados]);
 	}
 
 	public function showEventTipo($tipo){
 		$listaRelacionados = $this->evento->where('tipo','/contenido/actividades/'.$tipo)->get();
-		return view('madrid.listaTipo', ['listaRelacionados'=>$listaRelacionados]);
+		return view('madrid.evento.listaTipo', ['listaRelacionados'=>$listaRelacionados]);
 	}
 
 }

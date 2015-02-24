@@ -14,13 +14,22 @@
 Route::get('/', 'WelcomeController@index');
 Route::get('centro/{id}', 'WelcomeController@showProfile');
 
+Route::group(['prefix' => 'evento'], function()
+{
+    Route::get('/', ['as' => 'evento.index', 'uses' => 'EventController@index']);
+    Route::get('{id}',['as' => 'evento.show', 'uses' => 'EventController@showEvent']);
+    Route::get('tipo/{id}', ['as' => 'evento.tipo', 'uses' =>'EventController@showEventTipo']);
+});
 
-Route::get('evento/', 'EventController@index');
-Route::get('evento/{id}', 'EventController@showEvent');
-Route::get('evento/tipo/{id}', 'EventController@showEventTipo');
+Route::group(['prefix' => 'centro'], function()
+{
+    Route::get('{id}',['as' => 'centro.show', 'uses' => 'WelcomeController@showProfile']);
+});
 
 
-Route::get('distritos', 'WelcomeController@showDistritos');
+Route::get('distritos', 'DistritoController@index');
+
+Route::get('sitemap.xml', 'SeoController@sitemap');
 
 Route::get('home', 'HomeController@index');
 

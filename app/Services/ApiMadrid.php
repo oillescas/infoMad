@@ -10,6 +10,7 @@ class ApiMadrid{
      * museos => http://datos.madrid.es/egob/catalogo/201132-0-turismo.xml
      * monumentos => http://datos.madrid.es/egob/catalogo/208844-0-monumentos-edificios.xml
      * fundadiones => http://datos.madrid.es/portal/site/egob/menuitem.c05c1f754a33a9fbe4b2e4b284f1a5a0/?vgnextoid=f7e2e0545fc88410VgnVCM1000000b205a0aRCRD&vgnextchannel=374512b9ace9f310VgnVCM100000171f5a0aRCRD
+     * parques y jardines => http://datos.madrid.es/egob/catalogo/200761-0-parques-jardines.xml
      *
      */
 

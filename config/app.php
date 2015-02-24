@@ -150,6 +150,7 @@ return [
 		 * Others
 		 */
 		'Jenssegers\Mongodb\MongodbServiceProvider',
+		'Watson\Sitemap\SitemapServiceProvider',
 
 
 	],
@@ -200,6 +201,7 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
 		'Carbon'	=> 'Carbon\Carbon',
+		'Sitemap' => 'Watson\Sitemap\Facades\Sitemap'
 
 	],
 
