@@ -4,14 +4,16 @@
 
 
 
+## DONE
+generar Sitemaps. https://github.com/dwightwatson/sitemap
 
 
 
 
 
+## TODO
+añadir mapa a listado por tipo de evento.
+añadir pagina de eventos y centros por distrito.
 
- ## TODO
-
- generar Sitemaps. https://github.com/dwightwatson/sitemap
- head generico https://github.com/graystevens/laravel-head
- login social https://github.com/SocialiteProviders/Google-Plus
+head generico https://github.com/graystevens/laravel-head
+login social https://github.com/SocialiteProviders/Google-Plus

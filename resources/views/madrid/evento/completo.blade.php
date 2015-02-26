@@ -1,4 +1,4 @@
-<div id="{{$evento->id_evento}}" class="evento" itemscope  itemtype="http://schema.org/Event">
+<div id="{{$evento->id_evento}}" class="evento mapPosition" itemscope  itemtype="http://schema.org/Event">
     <h2><a itemprop="url"  href="{{route('evento.show', $evento->id_evento)}}"><span itemprop="name">{{$evento['titulo']}}</span></a></h2>
     <div itemprop="description">
         {{$evento['descripcion']}}

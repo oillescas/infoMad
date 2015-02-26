@@ -9,7 +9,8 @@
 		"nategood/httpful": "*",
 		"jenssegers/mongodb": "dev-master",
 		"nesbot/carbon": "~1.14",
-		"watson/sitemap": "2.0.*"
+		"watson/sitemap": "dev-master",
+		"barryvdh/laravel-debugbar": "~2.0"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

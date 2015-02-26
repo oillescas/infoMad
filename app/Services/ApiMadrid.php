@@ -6,7 +6,7 @@ class ApiMadrid{
     /*
      * teatros => http://datos.madrid.es/egob/catalogo/208862-7650046-ocio_salas.xml
      * cines => http://datos.madrid.es/egob/catalogo/208862-7650164-ocio_salas.xml
-     * auditoriis => http://datos.madrid.es/egob/catalogo/208862-7650180-ocio_salas.xml
+     * auditorios => http://datos.madrid.es/egob/catalogo/208862-7650180-ocio_salas.xml
      * museos => http://datos.madrid.es/egob/catalogo/201132-0-turismo.xml
      * monumentos => http://datos.madrid.es/egob/catalogo/208844-0-monumentos-edificios.xml
      * fundadiones => http://datos.madrid.es/portal/site/egob/menuitem.c05c1f754a33a9fbe4b2e4b284f1a5a0/?vgnextoid=f7e2e0545fc88410VgnVCM1000000b205a0aRCRD&vgnextchannel=374512b9ace9f310VgnVCM100000171f5a0aRCRD
@@ -22,27 +22,43 @@ class ApiMadrid{
     public function getCentrosCulturales()
     {
         $uri = 'http://datos.madrid.es/egob/catalogo/200304-0-centros-culturales.xml';
-        $xml = $this->consultaApi($uri);
-        return $this->parsearEntidades($xml);
+        return $this->consultaEntidadesEventos($uri);
     }
 
     public function getBibliotecas()
     {
         $uri = 'http://datos.madrid.es/egob/catalogo/201747-0-bibliobuses-bibliotecas.xml';
-        $xml = $this->consultaApi($uri);
-        return $this->parsearEntidades($xml);
+       return $this->consultaEntidadesEventos($uri);
     }
 
     public function getEventosBibliotecas()
     {
         $uri = 'http://datos.madrid.es/egob/catalogo/206717-0-agenda-eventos-bibliotecas.xml';
-        $xml = $this->consultaApi($uri);
-        return $this->parsearEntidades($xml);
+        return $this->consultaEntidadesEventos($uri);
     }
 
     public function getEventosCulturales()
     {
         $uri = 'http://datos.madrid.es/egob/catalogo/206974-0-agenda-eventos-culturales-100.xml';
+       return $this->consultaEntidadesEventos($uri);
+    }
+
+    public function getCentrosDeportivos(){
+        return $this->consultaEntidadesEventos('http://datos.madrid.es/egob/catalogo/200186-0-polideportivos.xml');
+
+    }
+
+    public function getTeatros(){
+        return $this->consultaEntidadesEventos('http://datos.madrid.es/egob/catalogo/208862-7650046-ocio_salas.xml');
+    }
+
+    public function getCines(){
+        return $this->consultaEntidadesEventos('http://datos.madrid.es/egob/catalogo/208862-7650164-ocio_salas.xml');
+
+    }
+
+    private function consultaEntidadesEventos($uri)
+    {
         $xml = $this->consultaApi($uri);
         return $this->parsearEntidades($xml);
     }

@@ -8,10 +8,12 @@
         zoom: 12
         });
 
-        $(".centro").each(function(){
+        $(".mapPosition").each(function(){
             var $centro = $(this);
             // Define the pushpin location
-            var loc = new Microsoft.Maps.Location($centro.data('lat'),$centro.data('lon'));
+            var lat = $centro.find('[itemprop="latitude"]').attr('content');
+            var lon = $centro.find('[itemprop="longitude"]').attr('content');
+            var loc = new Microsoft.Maps.Location(lat,lon);
 
             // Add a pin to the map
             var pin = new Microsoft.Maps.Pushpin(loc,{draggable: false});

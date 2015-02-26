@@ -151,6 +151,8 @@ return [
 		 */
 		'Jenssegers\Mongodb\MongodbServiceProvider',
 		'Watson\Sitemap\SitemapServiceProvider',
+		'Barryvdh\Debugbar\ServiceProvider',
+
 
 
 	],
@@ -201,7 +203,9 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
 		'Carbon'	=> 'Carbon\Carbon',
-		'Sitemap' => 'Watson\Sitemap\Facades\Sitemap'
+		'Sitemap' => 'Watson\Sitemap\Facades\Sitemap',
+		'Debugbar' => 'Barryvdh\Debugbar\Facade',
+
 
 	],
 

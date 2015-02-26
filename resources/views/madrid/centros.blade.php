@@ -17,7 +17,7 @@
                     <div class="panel-body">
                         <ul id="listaCentros">
                             @foreach ($listaContenidos as $contenido)
-                             <li class="centro" data-lat="{{$contenido['localizacion']['latitud'] or 0}}" data-lon="{{$contenido['localizacion']['longitud'] or 0}}">
+                             <li class="centro mapPosition" data-lat="{{$contenido['localizacion']['latitud'] or 0}}" data-lon="{{$contenido['localizacion']['longitud'] or 0}}">
                                 <div itemscope itemtype="http://schema.org/CivicStructure">
                                     <meta itemprop="latitude" content="{{$contenido['localizacion']['latitud'] or 0}}" />
                                     <meta itemprop="longitude" content="{{$contenido['localizacion']['longitud'] or 0 }}" />
