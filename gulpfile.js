@@ -14,3 +14,18 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
     mix.less('app.less');
 });
+
+
+elixir(function(mix) {
+    mix.scripts(['centro.js', 'eventos.js'], 'public/js/infocentro.js')
+       .scripts(['centro.js', 'index.js'], 'public/js/listaitpo.js');
+});
+
+elixir(function(mix) {
+    mix.copy('resources/js', 'public/js');
+});
+
+
+elixir(function(mix) {
+    mix.version("js/infocentro.js");
+});

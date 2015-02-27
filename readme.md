@@ -1,7 +1,8 @@
 ## Infomadrid
 
 
-
+## +info
+https://laravel-news.com/2014/10/setting-laravel-elixr-bootstrap/
 
 
 ## DONE
