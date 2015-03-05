@@ -1,5 +1,5 @@
 (function($){
-    console.log("cargando modulo maps 3.");
+    console.log("cargando modulo maps 3.4.5");
     var maps = {};
     maps.init = function(){
 
@@ -14,6 +14,8 @@
             var centro = new Microsoft.Maps.Location(40.417062, -3.703552);
             var zoom = 12;
 
+
+
             if(!multi){
                 centro = new Microsoft.Maps.Location($datos.find('[itemprop="latitude"]').attr('content'), $datos.find('[itemprop="longitude"]').attr('content'));
                 zoom = 14;
@@ -24,7 +26,7 @@
              center: centro,
              enableSearchLogo: false,
              showMapTypeSelector: false,
-             zoom: zoom
+             zoom: 14
             });
 
 
@@ -69,27 +71,3 @@
     };
     $(document).ready(maps.init);
 })(jQuery);
-function init()
-{
-    $('#calendar').fullCalendar({
-            lang: 'es',
-            events: function(start, end, timezone, callback) {
-                console.log(arguments);
-                var events = [];
-                $(".evento").each(function(){
-                     events.push({
-                        id: $(this).attr("id"),
-                        title: $(this).find('[itemprop="name"]').text(),
-                        start: $(this).find('[itemprop="startDate"]').attr("content"), // will be parsed
-                        allDay: false,
-                        editable: false
-                    });
-                });
-                callback(events);
-            }
-    });
-}
-
-
-$(document).ready(init);
-//# sourceMappingURL=index.js.map

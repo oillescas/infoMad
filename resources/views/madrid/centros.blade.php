@@ -3,10 +3,10 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
+            <div id="map-container" class="col-md-8">
                 <div class="panel panel-default">
-                    <div class="panel-body">
-                        <div id='mapDiv'></div>
+                     <div class="mapWrapper">
+                      <div id='mapDiv' data-multi="true" data-origen="#listaCentros li"></div>
                     </div>
                 </div>
             </div>
@@ -18,20 +18,7 @@
                         <ul id="listaCentros">
                             @foreach ($listaContenidos as $contenido)
                              <li class="centro mapPosition" data-lat="{{$contenido['localizacion']['latitud'] or 0}}" data-lon="{{$contenido['localizacion']['longitud'] or 0}}">
-                                <div itemscope itemtype="http://schema.org/CivicStructure">
-                                    <meta itemprop="latitude" content="{{$contenido['localizacion']['latitud'] or 0}}" />
-                                    <meta itemprop="longitude" content="{{$contenido['localizacion']['longitud'] or 0 }}" />
-                                    <h2><a href="/centro/{{$contenido->id_entidad}}"><span  itemprop="name">{{$contenido->nombre}}</span></a></h2>
-                                    <div class="contenidoExtendido">
-                                      <div>
-                                        {{$contenido->localizacion->clase_vial or ''}}
-                                        {{$contenido['localizacion']['nombre_via'] or ''}},
-                                        {{$contenido['localizacion']['num'] or ''}}
-                                      </div>
-                                      <div>{{$contenido['localizacion']['distrito'] or ''}}</div>
-                                      <div>{{$contenido['transporte']}}</div>
-                                    </div>
-                                </div>
+                                @include('madrid.centro.completo', ['centro' => $contenido])
                              </li>
                             @endforeach
                         </ul>
@@ -45,7 +32,18 @@
 @section('style');
 
 <link rel="stylesheet" type="text/css" href="/css/index.css">
+<style>
+  #map-container{
+    border-left: 15px solid transparent;
+  }
 
+  .mapWrapper{
+
+    padding-top: 65%;
+    /* margin: 0; */
+  }
+
+</style>
 @endsection
 
 
@@ -53,5 +51,6 @@
 
 <script charset="UTF-8" type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0">
 </script>
-<script type="text/javascript" src="/js/index.js"></script>
+<script type="text/javascript" src='{{ elixir("js/index.js") }}'></script>
+<!-- <script type="text/javascript" src="/js/index.js"></script> -->
 @endsection

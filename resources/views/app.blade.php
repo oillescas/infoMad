@@ -17,41 +17,74 @@
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
+	<style>
+		body {
+
+		}
+
+		.wide {
+		  width:100%;
+		  height:200px;
+		  background-image:url('/img/skyline.jpg');
+		  background-size:cover;
+		  margin-top: -20px;
+		}
+
+		.wide img {
+		  width:100%;
+		}
+		.wide .navbar{
+			background-color: transparent;
+			border-bottom: none;
+		}
+
+		.wide .container{
+			margin-top: 0;
+		}
+
+		.logo {
+		  color:#fff;
+		  font-weight:800;
+		  font-size:14pt;
+		  padding:25px;
+		  text-align:center;
+		}
+
+		.line {
+		  padding-top:20px;
+		  white-space:no-wrap;
+		  overflow:hidden;
+		  text-align:center;
+		}
+		.container{
+			margin-top: 20px
+		}
+	</style>
 </head>
 <body>
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle Navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">Laravel</a>
-			</div>
-
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li><a href="/">Home</a></li>
-				</ul>
-
-				<ul class="nav navbar-nav navbar-right">
-					@if (Auth::guest())
-						<li><a href="/auth/login">Login</a></li>
-						<li><a href="/auth/register">Register</a></li>
-					@else
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="/auth/logout">Logout</a></li>
-							</ul>
-						</li>
-					@endif
-				</ul>
-			</div>
+	<div class="wide">
+		<div class="navbar navbar-inverse">
+		  	<div class="container">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#">Brand</a>
+		    </div>
+		    <div class="collapse navbar-collapse">
+		      <ul class="nav navbar-nav">
+		        <li class="active"><a href="#">Home</a></li>
+		        <li><a href="#about">About</a></li>
+		      </ul>
+		      <ul class="nav navbar-nav navbar-right">
+		        <li><a href="#">Username</a></li>
+		      </ul>
+		    </div><!--/.nav-collapse -->
+		  </div>
 		</div>
-	</nav>
+	</div>
 
 	@yield('content')
 

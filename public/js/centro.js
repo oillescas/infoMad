@@ -2,12 +2,12 @@
    {
 
 
-        var $centro = $("#centro");
+        var $centro = $(".centro");
         $("#map-container").width($centro.width());
 
         var centro = new Microsoft.Maps.Location($centro.data('lat'), $centro.data('lon'));
 
-        var map = new Microsoft.Maps.Map(document.getElementById("idMap"),
+        var map = new Microsoft.Maps.Map(document.getElementById("mapDiv"),
         {credentials:"AoBhurcO68zEsZnqzAYV2vZJ-mC_7CJ2ed1OndVK29akMiWNMf0EdbddQm00mqDI",
          center: centro,
          enableSearchLogo: false,

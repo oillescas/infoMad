@@ -4,16 +4,15 @@
 @section('style');
    <style>
       #map-container{
-        padding: 15px;
-        margin-left: 15px;
-        margin-right: 15px;
-        margin-bottom: 15px;
+        border-left: 15px solid transparent;
       }
 
-      #idMap {
-        height: 300px;
+      .mapWrapper{
 
+        padding-top: 65%;
+        /* margin: 0; */
       }
+
     </style>
     <link rel="stylesheet" type="text/css" href="/css/fullcalendar-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css">
@@ -25,32 +24,25 @@
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/lang-all.js"></script>
 
-    <script type="text/javascript" src='{{ elixir("js/infocentro.js") }}'></script>
+    <script type="text/javascript" src='{{ elixir("js/index.js") }}'></script>
 
 @endsection
 
 @section('content')
     <div class="container">
       <div class="row">
+
             <div  id="map-container" class="col-md-6">
-                <div id="idMap"> </div>
+                <div class="mapWrapper">
+                  <div id='mapDiv' data-multi="false" data-origen="#centro"></div>
+                </div>
             </div>
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">{{$infoCentro['nombre']}}</div>
 
-                    <div class="panel-body">
-                        <div id="centro" class="centro" data-lat="{{$infoCentro['localizacion']['latitud'] or ''}}" data-lon="{{$infoCentro['localizacion']['longitud'] or ''}}">
-                            <h2><a href="/centro/{{$infoCentro['id_entidad']}}">{{$infoCentro['nombre']}}</a></h2>
-                            <div>
-                                {{$infoCentro['localizacion']['clase_vial'] or ''}}
-                                {{$infoCentro['localizacion']['nombre_via'] or ''}},
-                                {{$infoCentro['localizacion']['num'] or ''}}
-                            </div>
-                            <div>{{$infoCentro['localizacion']['distrito'] or ''}}</div>
-                            <div>{{$infoCentro['transporte']}}</div>
-                            <div>{{$infoCentro['equipamiento']}}</div>
-                         </div>
+                    <div class="panel-body" id="centro" >
+                         @include('madrid.centro.completo', ['centro' => $infoCentro])
                     </div>
                 </div>
             </div>

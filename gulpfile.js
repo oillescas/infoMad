@@ -1,3 +1,4 @@
+var gulp = require('gulp');
 var elixir = require('laravel-elixir');
 
 /*
@@ -11,21 +12,23 @@ var elixir = require('laravel-elixir');
  |
  */
 
+
 elixir(function(mix) {
     mix.less('app.less');
 });
 
 
 elixir(function(mix) {
-    mix.scripts(['centro.js', 'eventos.js'], 'public/js/infocentro.js')
-       .scripts(['centro.js', 'index.js'], 'public/js/listaitpo.js');
+    mix.scripts(['maps.js', 'eventos.js'], 'public/js/index.js');
 });
+
+//elixir(function(mix) {
+//    mix.copy('resources/js', 'public/js');
+//});
+
 
 elixir(function(mix) {
-    mix.copy('resources/js', 'public/js');
+    mix.version("js/index.js");
 });
 
 
-elixir(function(mix) {
-    mix.version("js/infocentro.js");
-});
