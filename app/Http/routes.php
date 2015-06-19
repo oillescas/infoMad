@@ -1,5 +1,5 @@
 <?php
-
+Log::info('This is some useful information.');
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'WelcomeController@index');
-Route::get('centro/{id}', 'WelcomeController@showProfile');
+//Route::get('centro/{id}', 'WelcomeController@showProfile');
 
 Route::group(['prefix' => 'evento'], function()
 {
@@ -31,7 +31,7 @@ Route::get('distritos', 'DistritoController@index');
 
 Route::get('sitemap.xml', 'SeoController@sitemap');
 
-Route::get('home', 'HomeController@index');
+//Route::get('home', 'HomeController@index');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

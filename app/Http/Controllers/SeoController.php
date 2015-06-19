@@ -21,8 +21,6 @@ class SeoController extends Controller {
         {
             Sitemap::addTag(route('evento.show', $evento->id_evento), $evento->created_at, 'daily', '0.8');
         }
-
-
         return Sitemap::xml();
 	}
 

@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'default' => 'mongodb',
+	'default' => 'mongolab',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -53,6 +53,14 @@ return [
 		    'username' => '',
 		    'password' => '',
 		    'database' => 'madrid'
+		),
+		'mongolab' => array(
+		    'driver'   => 'mongodb',
+		    'host'     => env('DB_HOST', 'localhost'),
+		    'port'     => env('DB_PORT', '63929'),
+		    'username' => env('DB_USERNAME', 'madrid'),
+		    'password' => env('DB_PASSWORD', ''),
+		    'database' => env('DB_DATABASE', 'madrid'),
 		),
 		'sqlite' => [
 			'driver'   => 'sqlite',
