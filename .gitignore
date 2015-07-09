@@ -2,4 +2,3 @@
 /node_modules
 .env
 /bower_components
-public/build/
