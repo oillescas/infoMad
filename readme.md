@@ -14,6 +14,7 @@ generar Sitemaps. https://github.com/dwightwatson/sitemap
 
 
 ## TODO
+controlar que el centro no existe (parques)
 añadir mapa a listado por tipo de evento.
 añadir pagina de eventos y centros por distrito.
 
