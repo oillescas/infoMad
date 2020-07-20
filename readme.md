@@ -1,3 +1,4 @@
+# Deprecated
 ## Infomadrid
 
 
@@ -23,3 +24,4 @@ añadir rutas ical https://github.com/markuspoerschke/iCal
 head generico https://github.com/graystevens/laravel-head
         https://github.com/artesaos/seotools
 login social https://github.com/SocialiteProviders/Google-Plus
+
